@@ -12,6 +12,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.heybooks.components.BookDetailCard
 import com.example.heybooks.components.BookItemList
 import com.example.heybooks.components.InputTextField
 import com.example.heybooks.components.TopBar
@@ -26,27 +27,33 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
 
+
+                    BookDetailCard()
+
                     val input = remember {
                         mutableStateOf("")
                     }
 
-                    LazyColumn {
-                        item {
-                            TopBar(title = "Book Description")
-                        }
-                        item {
-                            InputTextField(
-                                label = "Search for Books...",
-                                value = input.value,
-                                onValueChange = {
-                                    input.value = it
-                                }
-                            )
-                        }
-                        item {
-                            BookItemList()
-                        }
-                    }
+//                    LazyColumn {
+//                        item {
+//                            TopBar(title = "Book Description")
+//                        }
+//                        item {
+//                            InputTextField(
+//                                label = "Search for Books...",
+//                                value = input.value,
+//                                onValueChange = {
+//                                    input.value = it
+//                                }
+//                            )
+//                        }
+//                        item {
+//                            BookItemList()
+//                        }
+//                        item {
+//                            BookDetailCard()
+//                        }
+//                    }
                 }
             }
         }
